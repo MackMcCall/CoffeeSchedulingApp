@@ -5,7 +5,7 @@
 
         public void InsertUserBag(Inventory userBagToInsert);
         
-        public IEnumerable<Coffee> GetAllUserBags(int userID);
+        public IEnumerable<Coffee> GetAllUserBags(User user);
 
         public Coffee GetUserBag(int coffeeID);
 
