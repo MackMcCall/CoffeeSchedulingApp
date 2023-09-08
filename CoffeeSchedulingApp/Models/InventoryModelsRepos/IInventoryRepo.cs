@@ -8,7 +8,7 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
 
         public void InsertUserBag(Inventory userBagToInsert);
 
-        public IEnumerable<Coffee> GetAllUserBags(User user);
+        public IEnumerable<Coffee> GetAllUserBags(int userID);
 
         public Coffee GetUserBag(int coffeeID);
 

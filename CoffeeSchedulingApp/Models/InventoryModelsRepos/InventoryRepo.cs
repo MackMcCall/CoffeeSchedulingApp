@@ -28,13 +28,13 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
                 "WHERE c.CoffeeID = @coffeeID;", new { coffeeID });
         }
 
-        public IEnumerable<Coffee> GetAllUserBags(User user)
+        public IEnumerable<Coffee> GetAllUserBags(int userID)
         {
             return _conn.Query<Coffee>("SELECT Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams " +
                 "FROM coffees AS c " +
                 "INNER JOIN inventories AS i " +
                 "ON c.CoffeeID = i.CoffeeID " +
-                "WHERE UserID = @userID;", new { userID = user.UserID });
+                "WHERE UserID = @userID;", new { userID });
         }
 
         public void UpdateUserBag(Inventory userBag)

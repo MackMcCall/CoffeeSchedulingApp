@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Coffee>
+﻿@using CoffeeSchedulingApp.Models.CoffeeModelsRepos;
+@model IEnumerable<Coffee>
 
 <h2>Your Coffees</h2>
 <table class="table">
@@ -20,21 +21,20 @@
     {
         <tr>
             <td><a href=/Coffee/ViewCoffee/@coffee.CoffeeID>@coffee.CoffeeID</a></td>
-            <td>@coffee.CoffeeID</td>
             <td>@coffee.Roaster</td>
             <td>@coffee.Producer</td>
             <td>@coffee.Country</td>
             <td>@coffee.Region</td>
             <td>@coffee.Variety</td>
             <td>@coffee.Process</td>
-            <td>@coffee.Roast Date</td>
-            <td>@coffee.Days Rest Needed</td>
-            <td>@coffee.Ready To Drink</td>
+            <td>@coffee.RoastDate.Date.Month/@coffee.RoastDate.Date.Day</td>
+            <td>@coffee.DaysRestNeeded</td>
+            <td>@coffee.ReadyToDrink</td>
             <td>@coffee.Grams</td>
         </tr>
     }
 </table>
 
-@* <div style="display: block">
-    <a href="/Game/InsertGame/">Enter a New Coffee</a>
-</div> *@
+<div style="display: block">
+    <a href="/Coffee/InsertCoffee/">Enter a New Coffee</a>
+</div>

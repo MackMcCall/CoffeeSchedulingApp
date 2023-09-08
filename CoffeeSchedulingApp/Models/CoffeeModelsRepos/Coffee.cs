@@ -9,7 +9,7 @@
         public string Region { get; set; }
         public string Variety { get; set; }
         public string Process { get; set; }
-        public DateOnly RoastDate { get; set; }
+        public DateTime RoastDate { get; set; }
         public int DaysRestNeeded { get; set; }
         public bool ReadyToDrink { get; set; }
         public double Grams { get; set; }

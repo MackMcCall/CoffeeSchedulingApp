@@ -1,4 +1,5 @@
-﻿@model Coffee
+﻿@using CoffeeSchedulingApp.Models.CoffeeModelsRepos;
+@model Coffee
 
 <h3>@Model.Roaster @Model.Producer Information</h3>
 <table class="table">
@@ -17,18 +18,18 @@
     </tr>
 
     <tr>
-        <td><a href=/Coffee/ViewCoffee/@coffee.CoffeeID>@coffee.CoffeeID</a></td>
-        <td>@coffee.CoffeeID</td>
-        <td>@coffee.Roaster</td>
-        <td>@coffee.Producer</td>
-        <td>@coffee.Country</td>
-        <td>@coffee.Region</td>
-        <td>@coffee.Variety</td>
-        <td>@coffee.Process</td>
-        <td>@coffee.Roast Date</td>
-        <td>@coffee.Days Rest Needed</td>
-        <td>@coffee.Ready To Drink</td>
-        <td>@coffee.Grams</td>
+        <td><a href=/Coffee/ViewCoffee/@Model.CoffeeID>@Model.CoffeeID</a></td>
+        <td>@Model.CoffeeID</td>
+        <td>@Model.Roaster</td>
+        <td>@Model.Producer</td>
+        <td>@Model.Country</td>
+        <td>@Model.Region</td>
+        <td>@Model.Variety</td>
+        <td>@Model.Process</td>
+        <td>@Model.RoastDate</td>
+        <td>@Model.DaysRestNeeded</td>
+        <td>@Model.ReadyToDrink</td>
+        <td>@Model.Grams</td>
     </tr>
     }
 </table>
