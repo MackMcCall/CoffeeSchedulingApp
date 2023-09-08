@@ -16,12 +16,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/mackm/OneDrive/Desktop/repos/CoffeeSchedulingApp/CoffeeSchedulingApp/Views/Coffee/InsertCoffee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29mZmVlXEluc2VydENvZmZlZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mackm/OneDrive/Desktop/repos/CoffeeSchedulingApp/CoffeeSchedulingApp/Views/Coffee/UpdateCoffee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29mZmVlXFVwZGF0ZUNvZmZlZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mackm/OneDrive/Desktop/repos/CoffeeSchedulingApp/CoffeeSchedulingApp/Views/Coffee/ViewCoffee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29mZmVlXFZpZXdDb2ZmZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mackm/OneDrive/Desktop/repos/CoffeeSchedulingApp/CoffeeSchedulingApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mackm/OneDrive/Desktop/repos/CoffeeSchedulingApp/CoffeeSchedulingApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mackm/OneDrive/Desktop/repos/CoffeeSchedulingApp/CoffeeSchedulingApp/Views/Inventory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mackm/OneDrive/Desktop/repos/CoffeeSchedulingApp/CoffeeSchedulingApp/Views/Shared/Error.cshtml]

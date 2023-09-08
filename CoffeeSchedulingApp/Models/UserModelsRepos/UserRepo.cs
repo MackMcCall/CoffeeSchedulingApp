@@ -2,7 +2,7 @@
 using Org.BouncyCastle.Bcpg;
 using System.Data;
 
-namespace CoffeeSchedulingApp.Models
+namespace CoffeeSchedulingApp.Models.UserModelsRepos
 {
     public class UserRepo : IUserRepo
     {
@@ -11,17 +11,17 @@ namespace CoffeeSchedulingApp.Models
         public UserRepo(IDbConnection conn)
         {
             _conn = conn;
-        } 
+        }
 
         public void InsertUser(User userToInsert)
         {
-            _conn.Execute("INSERT INTO users (Name) VALUES (@userID, @name);", 
+            _conn.Execute("INSERT INTO users (Name) VALUES (@userID, @name);",
                 new { name = userToInsert.Name });
         }
 
         public void UpdateUser(User user)
         {
-            _conn.Execute("UPDATE users SET Name = @name WHERE UserID = @userID", 
+            _conn.Execute("UPDATE users SET Name = @name WHERE UserID = @userID",
                 new { name = user.Name, userID = user.UserID });
         }
 

@@ -1,0 +1,47 @@
+﻿@model Coffee
+
+<h3>@Model.Roaster @Model.Producer Information</h3>
+<table class="table">
+    <tr>
+        <th>CoffeeID</th>
+        <th>Roaster</th>
+        <th>Producer</th>
+        <th>Country</th>
+        <th>Region</th>
+        <th>Variety</th>
+        <th>Process</th>
+        <th>Roast Date</th>
+        <th>Days Rest Needed</th>
+        <th>Ready To Drink</th>
+        <th>Grams</th>
+    </tr>
+
+    <tr>
+        <td><a href=/Coffee/ViewCoffee/@coffee.CoffeeID>@coffee.CoffeeID</a></td>
+        <td>@coffee.CoffeeID</td>
+        <td>@coffee.Roaster</td>
+        <td>@coffee.Producer</td>
+        <td>@coffee.Country</td>
+        <td>@coffee.Region</td>
+        <td>@coffee.Variety</td>
+        <td>@coffee.Process</td>
+        <td>@coffee.Roast Date</td>
+        <td>@coffee.Days Rest Needed</td>
+        <td>@coffee.Ready To Drink</td>
+        <td>@coffee.Grams</td>
+    </tr>
+    }
+</table>
+
+<div style="display: block">
+    <a href="/Coffee/UpdateCoffee/@Model.CoffeeID">Update this Coffee</a>
+</div>
+
+<div style="display: block">
+
+    @using (Html.BeginForm("DeleteCoffee", "Coffee", "Post"))
+    {
+        <input type="hidden" asp-for="CoffeeID" value="@Model.CoffeeID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this coffee" />
+    }
+</div>

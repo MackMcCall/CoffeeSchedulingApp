@@ -1,0 +1,16 @@
+﻿@model Coffee
+
+<h2>Update @Model.Roaster @Model.Producer</h2>
+
+@using (Html.BeginForm("UpdateCoffeeToDatabase", "Coffee", "Post"))
+{
+    <input asp-for="CoffeeID" type="hidden" value="@Model.CoffeeID" />
+
+    <label asp-for="Roaster" class="control-label">Roaster</label>
+    <input type="text" name="Roaster" class="form-control" value="@Model.Roaster" />
+
+    <label asp-for="Producer" class="control-label">Producer</label>
+    <input type="text" name="Producer" class="form-control" value="@Model.Producer" />
+
+    <input type="submit" value="Update Coffee" class="btn btn-primary" />
+}

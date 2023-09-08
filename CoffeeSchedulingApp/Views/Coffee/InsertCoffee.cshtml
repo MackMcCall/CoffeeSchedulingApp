@@ -1,0 +1,41 @@
+﻿@model Coffee
+
+<h2>Enter a New Coffee</h2>
+
+@using (Html.BeginForm("InsertCoffeeToDatabase", "Coffee", "Post"))
+{
+    <input asp-for="CoffeeID" type="hidden" value="" />
+
+    <label asp-for="Roaster" class="control-label">Roaster</label>
+    <input type="text" name="Roaster" class="form-control" value="" />
+
+    <label asp-for="Producer" class="control-label">Producer</label>
+    <input type="text" name="Producer" class="form-control" value="" />
+
+    <label asp-for="Country" class="control-label">Country</label>
+    <input type="text" name="Country" class="form-control" value="" />
+
+    <label asp-for="Region" class="control-label">Region</label>
+    <input type="text" name="Region" class="form-control" value="" />
+
+    <label asp-for="Variety" class="control-label">Variety</label>
+    <input type="text" name="Variety" class="form-control" value="" />
+
+    <label asp-for="Process" class="control-label">Process</label>
+    <input type="date" name="Process" class="form-control" value="" />
+
+    <label asp-for="RoastDate" class="control-label">Roast Date</label>
+    <input type="text" name="RoastDate" class="form-control" value="" />
+
+    <label asp-for="DaysRestNeeded" class="control-label">Days Rest Needed</label>
+    <input type="number" name="DaysRestNeeded" class="form-control" value="" />
+
+    <label asp-for="ReadyToDrink" class="control-label">Ready To Drink</label>
+    <input type="checkbox" name="ReadyToDrink" class="form-control" value="" />
+
+    <label asp-for="Grams" class="control-label">Grams</label>
+    <input type="number" name="Grams" class="form-control" value="" />
+
+
+    <input type="submit" value="Enter Coffee" class="btn btn-primary" />
+}

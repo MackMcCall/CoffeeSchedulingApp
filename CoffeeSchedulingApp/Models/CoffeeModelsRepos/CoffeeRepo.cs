@@ -6,7 +6,7 @@ using System.Diagnostics.Metrics;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc.Controllers;
 
-namespace CoffeeSchedulingApp.Models
+namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
 {
     public class CoffeeRepo : ICoffeeRepo
     {
@@ -16,18 +16,24 @@ namespace CoffeeSchedulingApp.Models
         {
             _conn = conn;
         }
-        
+
         public void InsertCoffee(Coffee coffeeToInsert)
         {
             _conn.Execute("INSERT INTO coffees " +
                 "(CoffeeID, Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams)" +
                 "VALUES (@coffeeID, @roaster, @producer, @country, @region, @variety, @process, @roastDate, @daysRestNeeded, @readyToDrink, @grams);",
-            new { 
-                coffeeID = coffeeToInsert.CoffeeID, roaster = coffeeToInsert.Roaster, 
-                producer = coffeeToInsert.Producer, country = coffeeToInsert.Country, 
-                region = coffeeToInsert.Region, variety = coffeeToInsert.Variety, 
-                process = coffeeToInsert.Process, roastDate = coffeeToInsert.RoastDate, 
-                daysRestNeeded = coffeeToInsert.DaysRestNeeded, readyToDrink = coffeeToInsert.ReadyToDrink, 
+            new
+            {
+                coffeeID = coffeeToInsert.CoffeeID,
+                roaster = coffeeToInsert.Roaster,
+                producer = coffeeToInsert.Producer,
+                country = coffeeToInsert.Country,
+                region = coffeeToInsert.Region,
+                variety = coffeeToInsert.Variety,
+                process = coffeeToInsert.Process,
+                roastDate = coffeeToInsert.RoastDate,
+                daysRestNeeded = coffeeToInsert.DaysRestNeeded,
+                readyToDrink = coffeeToInsert.ReadyToDrink,
                 grams = coffeeToInsert.Grams
             });
         }
@@ -49,8 +55,9 @@ namespace CoffeeSchedulingApp.Models
                 "DaysRestNeeded = @daysRestNeeded, " +
                 "ReadyToDrink = @readyToDrink, " +
                 "Grams = @grams" +
-                "WHERE CoffeeID = @coffeeID", 
-                new {
+                "WHERE CoffeeID = @coffeeID",
+                new
+                {
                     roaster = coffee.Roaster,
                     producer = coffee.Producer,
                     country = coffee.Country,

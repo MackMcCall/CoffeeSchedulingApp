@@ -1,4 +1,4 @@
-﻿namespace CoffeeSchedulingApp.Models
+﻿namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
 {
     public interface ICoffeeRepo
     {

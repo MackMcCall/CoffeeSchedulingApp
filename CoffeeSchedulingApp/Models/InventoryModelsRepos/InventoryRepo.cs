@@ -1,7 +1,8 @@
-﻿using Dapper;
+﻿using CoffeeSchedulingApp.Models.CoffeeModelsRepos;
+using CoffeeSchedulingApp.Models.UserModelsRepos;
+using Dapper;
 using System.Data;
-
-namespace CoffeeSchedulingApp.Models
+namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
 {
     public class InventoryRepo : IInventoryRepo
     {
@@ -11,10 +12,10 @@ namespace CoffeeSchedulingApp.Models
         {
             _conn = conn;
         }
-        
+
         public void InsertUserBag(Inventory userBagToInsert)
         {
-            _conn.Execute("INSERT INTO inventories (CoffeeID, UserID) VALUES (@coffeeID, userID)", 
+            _conn.Execute("INSERT INTO inventories (CoffeeID, UserID) VALUES (@coffeeID, userID)",
                      new { coffeeID = userBagToInsert.CoffeeID, userID = userBagToInsert.UserID });
         }
 
