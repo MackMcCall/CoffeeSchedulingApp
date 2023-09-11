@@ -27,7 +27,7 @@
         <td>@Model.Process</td>
         <td>@Model.RoastDate.Date.Month/@Model.RoastDate.Date.Day</td>
         <td>@Model.DaysRestNeeded</td>
-        <td>@(@Model.ReadyToDrink == true ? "Yes" : "No")</td>
+        <td>@(@Model.ReadyToDrink ? "Yes" : "No")</td>
         <td>@Model.Grams</td>
     </tr>
     
@@ -42,6 +42,6 @@
     @using (Html.BeginForm("DeleteCoffee", "Coffee", "Post"))
     {
         <input type="hidden" asp-for="CoffeeID" value="@Model.CoffeeID" />
-        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this coffee" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Coffee" />
     }
 </div>

@@ -1,5 +1,6 @@
 ﻿using CoffeeSchedulingApp.Models.CoffeeModelsRepos;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Policy;
 
 namespace CoffeeSchedulingApp.Controllers
 {
@@ -18,7 +19,33 @@ namespace CoffeeSchedulingApp.Controllers
             return View(coffee);
         }
 
+        public IActionResult UpdateCoffee(int id)
+        {
+            Coffee coffee = _repo.GetCoffee(id);
+            if (coffee == null)
+            {
+                return View("Coffee Not Found");
+            }
+            return View(coffee);
+        }
 
+        public IActionResult UpdateCoffeeToDatabase(Coffee coffee)
+        {
+            _repo.UpdateCoffee(coffee);
+
+            return RedirectToAction("ViewCoffee", new { id = coffee.CoffeeID });
+        }
+
+        public IActionResult InsertCoffee(Coffee coffeeToInsert)
+        {
+            return View(coffeeToInsert);
+        }
+
+        public IActionResult InsertCoffeeToDatabase(Coffee coffeeToInsert)
+        {
+            _repo.InsertCoffee(coffeeToInsert);
+            return RedirectToAction("Index", "Inventory");
+        }
     }
 }
 

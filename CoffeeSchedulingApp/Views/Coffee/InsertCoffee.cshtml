@@ -24,16 +24,21 @@
     <input type="text" name="Variety" class="form-control" value="" />
 
     <label asp-for="Process" class="control-label">Process</label>
-    <input type="date" name="Process" class="form-control" value="" />
+    <input type="text" name="Process" class="form-control" value="" />
 
     <label asp-for="RoastDate" class="control-label">Roast Date</label>
-    <input type="text" name="RoastDate" class="form-control" value="" />
+    <input type="date" name="RoastDate" class="form-control" value="" />
 
     <label asp-for="DaysRestNeeded" class="control-label">Days Rest Needed</label>
     <input type="number" name="DaysRestNeeded" class="form-control" value="" />
+    
+    @*<label asp-for="ReadyToDrink" class="control-label">Ready To Drink</label>
+    <input type="checkbox" name="ReadyToDrink" checked /> *@
 
-    <label asp-for="ReadyToDrink" class="control-label">Ready To Drink</label>
-    <input type="checkbox" name="ReadyToDrink" class="form-control" value="" />
+    <div class="form-group">
+        @Html.LabelFor(model => model.ReadyToDrink, "Ready To Drink")
+        @Html.CheckBoxFor(model => model.ReadyToDrink, new { @class = "form-check-input" })
+    </div>
 
     <label asp-for="Grams" class="control-label">Grams</label>
     <input type="number" name="Grams" class="form-control" value="" />

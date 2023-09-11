@@ -13,5 +13,31 @@
     <label asp-for="Producer" class="control-label">Producer</label>
     <input type="text" name="Producer" class="form-control" value="@Model.Producer" />
 
+    <label asp-for="Country" class="control-label">Country</label>
+    <input type="text" name="Country" class="form-control" value="@Model.Country" />
+
+    <label asp-for="Region" class="control-label">Region</label>
+    <input type="text" name="Region" class="form-control" value="@Model.Region" />
+
+    <label asp-for="Variety" class="control-label">Variety</label>
+    <input type="text" name="Variety" class="form-control" value="@Model.Variety" />
+
+    <label asp-for="Process" class="control-label">Process</label>
+    <input type="text" name="Process" class="form-control" value="@Model.Process" />
+
+    <label asp-for="RoastDate" class="control-label">Roast Date</label>
+    <input type="datetime" name="RoastDate" class="form-control" value="@Model.RoastDate.Month/@Model.RoastDate.Day" />
+
+    <label asp-for="DaysRestNeeded" class="control-label">Days Rest Needed</label>
+    <input type="number" name="DaysRestNeeded" class="form-control" value="@Model.DaysRestNeeded" />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ReadyToDrink, "Ready To Drink")
+        @Html.CheckBoxFor(model => model.ReadyToDrink, new { @class = "form-check-input" })
+    </div>
+
+    <label asp-for="Grams" class="control-label">Grams</label>
+    <input type="number" name="Grams" class="form-control" value="@Model.Grams" />
+
     <input type="submit" value="Update Coffee" class="btn btn-primary" />
 }

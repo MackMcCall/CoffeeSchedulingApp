@@ -29,7 +29,7 @@
             <td>@coffee.Process</td>
             <td>@coffee.RoastDate.Date.Month/@coffee.RoastDate.Date.Day</td>
             <td>@coffee.DaysRestNeeded</td>
-            <td>@coffee.ReadyToDrink</td>
+            <td>@(@coffee.ReadyToDrink == true ? "Yes" : "No")</td>
             <td>@coffee.Grams</td>
         </tr>
     }

@@ -5,6 +5,7 @@ using System.Data.Common;
 using System.Diagnostics.Metrics;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc.Controllers;
+using System.Transactions;
 
 namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
 {
@@ -20,11 +21,10 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
         public void InsertCoffee(Coffee coffeeToInsert)
         {
             _conn.Execute("INSERT INTO coffees " +
-                "(CoffeeID, Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams)" +
-                "VALUES (@coffeeID, @roaster, @producer, @country, @region, @variety, @process, @roastDate, @daysRestNeeded, @readyToDrink, @grams);",
+                "(Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams)" +
+                "VALUES (@roaster, @producer, @country, @region, @variety, @process, @roastDate, @daysRestNeeded, @readyToDrink, @grams);",
             new
             {
-                coffeeID = coffeeToInsert.CoffeeID,
                 roaster = coffeeToInsert.Roaster,
                 producer = coffeeToInsert.Producer,
                 country = coffeeToInsert.Country,
@@ -36,6 +36,11 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
                 readyToDrink = coffeeToInsert.ReadyToDrink,
                 grams = coffeeToInsert.Grams
             });
+            
+            @coffeeToInsert.CoffeeID = Convert.ToInt32(_conn.ExecuteScalar("SELECT LAST_INSERT_ID();", coffeeToInsert));
+
+            _conn.Execute("INSERT INTO inventories (CoffeeID, UserID) VALUES (@coffeeID, @userID);",
+                new { coffeeToInsert.CoffeeID, userID = 1 });
         }
         public Coffee GetCoffee(int id)
         {
@@ -54,8 +59,8 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
                 "RoastDate = @roastDate, " +
                 "DaysRestNeeded = @daysRestNeeded, " +
                 "ReadyToDrink = @readyToDrink, " +
-                "Grams = @grams" +
-                "WHERE CoffeeID = @coffeeID",
+                "Grams = @grams " +
+                "WHERE CoffeeID = @id",
                 new
                 {
                     roaster = coffee.Roaster,
@@ -67,8 +72,9 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
                     roastDate = coffee.RoastDate,
                     daysRestNeeded = coffee.DaysRestNeeded,
                     readyToDrink = coffee.ReadyToDrink,
-                    grams = coffee.Grams
-                });
+                    grams = coffee.Grams,
+                    id = coffee.CoffeeID
+                });;
         }
 
         public void DeleteCoffee(Coffee coffee)
