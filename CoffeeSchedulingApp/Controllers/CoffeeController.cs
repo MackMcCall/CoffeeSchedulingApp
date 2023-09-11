@@ -12,10 +12,13 @@ namespace CoffeeSchedulingApp.Controllers
             _repo = repo;
         }
         
-        public IActionResult Insert()
+        public IActionResult ViewCoffee(int id)
         {
-            return View();
+            var coffee = _repo.GetCoffee(id);
+            return View(coffee);
         }
+
+
     }
 }
 

@@ -17,6 +17,8 @@ namespace CoffeeSchedulingApp.Controllers
             var userCoffeeBags = _repo.GetAllUserBags(1);
             return View(userCoffeeBags);
         }
+
+        
     }
 }
 

@@ -15,8 +15,9 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
 
         public void InsertUserBag(Inventory userBagToInsert)
         {
-            _conn.Execute("INSERT INTO inventories (CoffeeID, UserID) VALUES (@coffeeID, userID)",
-                     new { coffeeID = userBagToInsert.CoffeeID, userID = userBagToInsert.UserID });
+            //_conn.Execute("INSERT INTO inventories (CoffeeID, UserID) VALUES (@coffeeID, userID)",
+            //         new { coffeeID = userBagToInsert.CoffeeID, userID = userBagToInsert.UserID });
+            throw new NotImplementedException();
         }
 
         public Coffee GetUserBag(int coffeeID)
@@ -30,7 +31,7 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
 
         public IEnumerable<Coffee> GetAllUserBags(int userID)
         {
-            return _conn.Query<Coffee>("SELECT Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams " +
+            return _conn.Query<Coffee>("SELECT c.CoffeeID, Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams " +
                 "FROM coffees AS c " +
                 "INNER JOIN inventories AS i " +
                 "ON c.CoffeeID = i.CoffeeID " +

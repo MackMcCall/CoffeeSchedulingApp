@@ -37,9 +37,9 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
                 grams = coffeeToInsert.Grams
             });
         }
-        public Coffee GetCoffee(int coffeeID)
+        public Coffee GetCoffee(int id)
         {
-            return _conn.QuerySingle<Coffee>("SELECT * FROM coffees WHERE CoffeeID = @coffeeID", new { coffeeID });
+            return _conn.QuerySingle<Coffee>("SELECT * FROM coffees WHERE CoffeeID = @id", new { id });
         }
 
         public void UpdateCoffee(Coffee coffee)
@@ -73,7 +73,7 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
 
         public void DeleteCoffee(Coffee coffee)
         {
-            _conn.Execute("DELETE FROM coffees WHERE CoffeeID = @coffeeID", new { coffeeID = coffee.CoffeeID });
+            _conn.Execute("DELETE FROM coffees WHERE CoffeeID = @id", new { id = coffee.CoffeeID });
         }
     }
 }

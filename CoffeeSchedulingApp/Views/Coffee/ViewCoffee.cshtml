@@ -19,19 +19,18 @@
 
     <tr>
         <td><a href=/Coffee/ViewCoffee/@Model.CoffeeID>@Model.CoffeeID</a></td>
-        <td>@Model.CoffeeID</td>
         <td>@Model.Roaster</td>
         <td>@Model.Producer</td>
         <td>@Model.Country</td>
         <td>@Model.Region</td>
         <td>@Model.Variety</td>
         <td>@Model.Process</td>
-        <td>@Model.RoastDate</td>
+        <td>@Model.RoastDate.Date.Month/@Model.RoastDate.Date.Day</td>
         <td>@Model.DaysRestNeeded</td>
-        <td>@Model.ReadyToDrink</td>
+        <td>@(@Model.ReadyToDrink == true ? "Yes" : "No")</td>
         <td>@Model.Grams</td>
     </tr>
-    }
+    
 </table>
 
 <div style="display: block">
