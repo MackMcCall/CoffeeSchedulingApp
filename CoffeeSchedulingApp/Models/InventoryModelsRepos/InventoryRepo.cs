@@ -38,11 +38,6 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
                 "WHERE UserID = @userID;", new { userID });
         }
 
-        public void UpdateUserBag(Inventory userBag)
-        {
-            //_conn.Execute("UPDATE inventories SET ")
-        }
-
         public void DeleteUserBag(Inventory userBag)
         {
             _conn.Execute("DELETE FROM inventories WHERE UserBagID = @userBagID;", new { userBagID = userBag.UserBagID });

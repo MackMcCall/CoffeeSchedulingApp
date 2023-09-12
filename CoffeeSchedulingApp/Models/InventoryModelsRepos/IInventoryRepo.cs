@@ -10,10 +10,6 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
 
         public IEnumerable<Coffee> GetAllUserBags(int userID);
 
-        public Coffee GetUserBag(int coffeeID);
-
-        public void UpdateUserBag(Inventory userBag);
-
         public void DeleteUserBag(Inventory userBag);
     }
 }
