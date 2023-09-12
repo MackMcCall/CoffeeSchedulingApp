@@ -79,7 +79,7 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
 
         public void DeleteCoffee(Coffee coffee)
         {
-            _conn.Execute("DELETE FROM coffees WHERE CoffeeID = @id", new { id = coffee.CoffeeID });
+            _conn.Execute("DELETE FROM inventories WHERE CoffeeID = @id; DELETE FROM coffees WHERE CoffeeID = @id;", new { id = coffee.CoffeeID });
         }
     }
 }

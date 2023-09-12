@@ -46,6 +46,12 @@ namespace CoffeeSchedulingApp.Controllers
             _repo.InsertCoffee(coffeeToInsert);
             return RedirectToAction("Index", "Inventory");
         }
+
+        public IActionResult DeleteCoffee(Coffee coffee)
+        {
+            _repo.DeleteCoffee(coffee);
+            return RedirectToAction("Index", "Inventory");
+        }
     }
 }
 
