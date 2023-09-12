@@ -39,6 +39,15 @@
 
 <div style="display: block">
 
+    @using (Html.BeginForm("UpdateCoffee", "Coffee", "Post"))
+    {
+        <input type="hidden" asp-for="CoffeeID" value="@Model.CoffeeID" />
+        <input type="submit" value="Update this Coffee" />
+    }
+</div>
+
+<div style="display: block">
+
     @using (Html.BeginForm("DeleteCoffee", "Coffee", "Post"))
     {
         <input type="hidden" asp-for="CoffeeID" value="@Model.CoffeeID" />

@@ -13,21 +13,14 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
             _conn = conn;
         }
 
-        public void InsertUserBag(Inventory userBagToInsert)
-        {
-            //_conn.Execute("INSERT INTO inventories (CoffeeID, UserID) VALUES (@coffeeID, userID)",
-            //         new { coffeeID = userBagToInsert.CoffeeID, userID = userBagToInsert.UserID });
-            throw new NotImplementedException();
-        }
-
-        public Coffee GetUserBag(int coffeeID)
-        {
-            return _conn.QuerySingle<Coffee>("SELECT Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams " +
-                "FROM coffees AS c " +
-                "INNER JOIN inventories AS i " +
-                "ON c.CoffeeID = i.CoffeeID " +
-                "WHERE c.CoffeeID = @coffeeID;", new { coffeeID });
-        }
+        //public Coffee GetUserBag(int coffeeID)
+        //{
+        //    return _conn.QuerySingle<Coffee>("SELECT Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams " +
+        //        "FROM coffees AS c " +
+        //        "INNER JOIN inventories AS i " +
+        //        "ON c.CoffeeID = i.CoffeeID " +
+        //        "WHERE c.CoffeeID = @coffeeID;", new { coffeeID });
+        //}
 
         public IEnumerable<Coffee> GetAllUserBags(int userID)
         {
@@ -36,11 +29,6 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
                 "INNER JOIN inventories AS i " +
                 "ON c.CoffeeID = i.CoffeeID " +
                 "WHERE UserID = @userID;", new { userID });
-        }
-
-        public void DeleteUserBag(Inventory userBag)
-        {
-            _conn.Execute("DELETE FROM inventories WHERE UserBagID = @userBagID;", new { userBagID = userBag.UserBagID });
         }
     }
 }

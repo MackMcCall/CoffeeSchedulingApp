@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using CoffeeSchedulingApp.Models.CoffeeModelsRepos;
+using Dapper;
 using Org.BouncyCastle.Bcpg;
 using System.Data;
 
@@ -11,6 +12,11 @@ namespace CoffeeSchedulingApp.Models.UserModelsRepos
         public UserRepo(IDbConnection conn)
         {
             _conn = conn;
+        }
+
+        public User GetUser(int id)
+        {
+            return _conn.QuerySingle<User>("SELECT * FROM users WHERE UserID = @id", new { id });
         }
 
         public void InsertUser(User userToInsert)

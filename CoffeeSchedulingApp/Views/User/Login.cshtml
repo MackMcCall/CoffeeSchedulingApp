@@ -1,0 +1,13 @@
+﻿
+@*Build Out Login Page*@
+@using CoffeeSchedulingApp.Models.UserModelsRepos;
+@model User
+
+<div style="display: block">
+
+    @using (Html.BeginForm("UpdateUser", "User", "Post"))
+    {
+        <input type="hidden" asp-for="UserID" value="@Model.UserID" />
+        <input type="submit" value="Update this User" />
+    }
+</div>
