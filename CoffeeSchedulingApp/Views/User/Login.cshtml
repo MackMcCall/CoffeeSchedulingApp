@@ -3,11 +3,27 @@
 @using CoffeeSchedulingApp.Models.UserModelsRepos;
 @model User
 
-<div style="display: block">
+@* <div style="display: block"> *@
 
-    @using (Html.BeginForm("UpdateUser", "User", "Post"))
+    @using (Html.BeginForm("GetUserBags", "User", "Post"))
     {
-        <input type="hidden" asp-for="UserID" value="@Model.UserID" />
-        <input type="submit" value="Update this User" />
+       @*  <input asp-for="UserID" type="hidden" value="@Model.UserID" /> *@
+
+        <label asp-for="UserID" class="control-label">Enter your User ID</label>
+        <input type="number" name="UserID" class="form-control" value="0"/>
+
+        <input type="submit" value="Log In" />
     }
-</div>
+@* </div> *@
+
+@* 
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserID)
+        @Html.TextBoxFor(model => model.UserID, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+} *@

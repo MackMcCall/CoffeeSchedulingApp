@@ -14,11 +14,10 @@ namespace CoffeeSchedulingApp.Controllers
         
         public IActionResult Index()
         {
-            var userCoffeeBags = _repo.GetAllUserBags(1);
+            int id = (int)TempData["id"];
+            var userCoffeeBags = _repo.GetAllUserBags(id);
             return View(userCoffeeBags);
-        }
-
-        
+        }        
     }
 }
 
