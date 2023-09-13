@@ -17,7 +17,7 @@ namespace CoffeeSchedulingApp.Controllers
             int id = (int)TempData["id"];
             var userCoffeeBags = _repo.GetAllUserBags(id);
             return View(userCoffeeBags);
-        }        
+        }
     }
 }
 
