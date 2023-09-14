@@ -24,12 +24,6 @@ namespace CoffeeSchedulingApp.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-
-            //var userData = 
-
-            //var userCoffeeBags = _repo.GetAllUserBags(id);
-
-            //return View(userCoffeeBags);
         }
     }
 }

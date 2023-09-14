@@ -19,10 +19,7 @@
         <th>Grams</th>
     </tr>
 
-    @* @{int daysWorthOfCoffee = "Total grams coffee / Users AvgGramsPerDay"} *@
-    @{
-        int daysWorthOfCoffee;
-    }
+    @{decimal totalGrams;}
 
     @foreach (var coffee in @Model.ModelCoffees)
     {
@@ -39,8 +36,14 @@
             <td>@(@coffee.ReadyToDrink == true ? "Yes" : "No")</td>
             <td>@coffee.Grams</td>
         </tr>
+
     }
 </table>
+
+@* @{int daysWorthOfCoffee = "Total grams coffee / Users AvgGramsPerDay"} *@
+@{
+    int daysWorthOfCoffee;
+}
 
 <div style="display: block">
     <a href="/Coffee/InsertCoffee/" class="btn btn-primary">Enter a New Coffee</a>
