@@ -1,6 +1,7 @@
 ﻿@using CoffeeSchedulingApp.Models.CoffeeModelsRepos;
+@using CoffeeSchedulingApp.Models.InventoryModelsRepos;
 @using CoffeeSchedulingApp.Models.UserModelsRepos;
-@model IEnumerable<Coffee>
+@model InventoryViewModel;
 
 <h2>Your Coffees</h2>
 <table class="table">
@@ -23,7 +24,7 @@
         int daysWorthOfCoffee;
     }
 
-    @foreach (var coffee in @Model)
+    @foreach (var coffee in @Model.ModelCoffees)
     {
         <tr>
             <td><a href=/Coffee/ViewCoffee/@coffee.CoffeeID>@coffee.CoffeeID</a></td>
