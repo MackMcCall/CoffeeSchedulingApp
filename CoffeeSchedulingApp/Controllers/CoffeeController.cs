@@ -1,4 +1,5 @@
 ﻿using CoffeeSchedulingApp.Models.CoffeeModelsRepos;
+using CoffeeSchedulingApp.Models.UserModelsRepos;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Policy;
 
@@ -12,7 +13,7 @@ namespace CoffeeSchedulingApp.Controllers
         {
             _repo = repo;
         }
-        
+
         public IActionResult ViewCoffee(int id)
         {
             var coffee = _repo.GetCoffee(id);
@@ -43,14 +44,21 @@ namespace CoffeeSchedulingApp.Controllers
 
         public IActionResult InsertCoffeeToDatabase(Coffee coffeeToInsert)
         {
-            _repo.InsertCoffee(coffeeToInsert);
-            return RedirectToAction("Index", "Inventory");
+            try
+            {
+                _repo.InsertCoffee(coffeeToInsert, Convert.ToInt32(HttpContext.Session.GetInt32("UserID")));
+                return RedirectToAction("Index", "Inventory");
+            }
+            catch(Exception e)
+            {
+                return RedirectToAction("Index", "Inventory");
+            }
         }
 
         public IActionResult DeleteCoffee(Coffee coffee)
         {
             _repo.DeleteCoffee(coffee);
-            return RedirectToAction("Index", "Inventory", TempData["id"]);
+            return RedirectToAction("Index", "Inventory");
         }
     }
 }

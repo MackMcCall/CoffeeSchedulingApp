@@ -6,6 +6,7 @@ using System.Diagnostics.Metrics;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using System.Transactions;
+using CoffeeSchedulingApp.Models.UserModelsRepos;
 
 namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
 {
@@ -18,7 +19,7 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
             _conn = conn;
         }
 
-        public void InsertCoffee(Coffee coffeeToInsert)
+        public void InsertCoffee(Coffee coffeeToInsert, int userID)
         {
             _conn.Execute("INSERT INTO coffees " +
                 "(Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams)" +
@@ -40,7 +41,7 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
             @coffeeToInsert.CoffeeID = Convert.ToInt32(_conn.ExecuteScalar("SELECT LAST_INSERT_ID();", coffeeToInsert));
 
             _conn.Execute("INSERT INTO inventories (CoffeeID, UserID) VALUES (@coffeeID, @userID);",
-                new { coffeeToInsert.CoffeeID, userID = 1 });
+                new { coffeeToInsert.CoffeeID, userID });
         }
         public Coffee GetCoffee(int id)
         {
