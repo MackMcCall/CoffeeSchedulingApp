@@ -30,5 +30,10 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
                 "ON c.CoffeeID = i.CoffeeID " +
                 "WHERE UserID = @userID;", new { userID });
         }
+
+        public User GetUser(int userID)
+        {
+            return _conn.QuerySingle<User>("SELECT * FROM users WHERE UserId = @userID;", new { userID });
+        }
     }
 }

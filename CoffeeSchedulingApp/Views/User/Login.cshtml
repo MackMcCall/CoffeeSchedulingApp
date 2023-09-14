@@ -1,29 +1,15 @@
-﻿
-@*Build Out Login Page*@
+﻿@*Build Out Login Page*@
 @using CoffeeSchedulingApp.Models.UserModelsRepos;
 @model User
 
 @* <div style="display: block"> *@
 
-    @using (Html.BeginForm("GetUserBags", "User", "Post"))
-    {
-       @*  <input asp-for="UserID" type="hidden" value="@Model.UserID" /> *@
-
-        <label asp-for="UserID" class="control-label">Enter your User ID</label>
-        <input type="number" name="UserID" class="form-control" value="0"/>
-
-        <input type="submit" value="Log In" />
-    }
-@* </div> *@
-
-@* 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+@using (Html.BeginForm("GetUserBags", "User", "Post"))
 {
+    @*  <input asp-for="UserID" type="hidden" value="@Model.UserID" /> *@
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.UserID)
-        @Html.TextBoxFor(model => model.UserID, new { @class = "form-control" })
-    </div>
+    <label asp-for="UserID" class="control-label">Enter your User ID</label>
+    <input type="number" name="UserID" class="form-control" value="0" />
 
-    <button type="submit" class="btn btn-primary">Register</button>
-} *@
+    <input type="submit" value="Log In" />
+}

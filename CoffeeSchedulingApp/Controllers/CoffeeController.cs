@@ -50,7 +50,7 @@ namespace CoffeeSchedulingApp.Controllers
         public IActionResult DeleteCoffee(Coffee coffee)
         {
             _repo.DeleteCoffee(coffee);
-            return RedirectToAction("Index", "Inventory");
+            return RedirectToAction("Index", "Inventory", TempData["id"]);
         }
     }
 }

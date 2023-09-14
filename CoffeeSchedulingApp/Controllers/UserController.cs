@@ -21,9 +21,14 @@ namespace CoffeeSchedulingApp.Controllers
 
         public IActionResult GetUserBags(User user)
         {
-
             var id = user.UserID;
             TempData["id"] = id;
+            // Storing data in the session
+            HttpContext.Session.SetInt32("UserID", id);
+
+            // Retrieving data from the session
+            var userID = HttpContext.Session.GetInt32("UserID");
+
             return RedirectToAction("Index", "Inventory");  
         }
     }

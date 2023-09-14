@@ -11,12 +11,18 @@ namespace CoffeeSchedulingApp.Controllers
         {
             _repo = repo;
         }
-        
+
         public IActionResult Index()
         {
-            int id = (int)TempData["id"];
-            var userCoffeeBags = _repo.GetAllUserBags(id);
-            return View(userCoffeeBags);
+            int id = Convert.ToInt32(HttpContext.Session.GetInt32("UserID"));
+            var inventoryVM = new InventoryViewModel { ModelCoffees = _repo.GetAllUserBags(id), ModelUser = _repo.GetUser(id) };
+            return View(inventoryVM);
+
+            //var userData = 
+
+            //var userCoffeeBags = _repo.GetAllUserBags(id);
+
+            //return View(userCoffeeBags);
         }
     }
 }
