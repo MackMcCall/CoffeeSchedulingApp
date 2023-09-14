@@ -14,9 +14,16 @@ namespace CoffeeSchedulingApp.Controllers
 
         public IActionResult Index()
         {
-            int id = Convert.ToInt32(HttpContext.Session.GetInt32("UserID"));
-            var inventoryVM = new InventoryViewModel { ModelCoffees = _repo.GetAllUserBags(id), ModelUser = _repo.GetUser(id) };
-            return View(inventoryVM);
+            try
+            {
+                int id = Convert.ToInt32(HttpContext.Session.GetInt32("UserID"));
+                var inventoryVM = new InventoryViewModel { ModelCoffees = _repo.GetAllUserBags(id), ModelUser = _repo.GetUser(id) };
+                return View(inventoryVM);
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index", "Home");
+            }
 
             //var userData = 
 

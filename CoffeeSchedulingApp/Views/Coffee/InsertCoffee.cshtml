@@ -37,7 +37,7 @@
         @Html.CheckBoxFor(model => model.ReadyToDrink, new { @class = "form-check-input" })
     </div>
 
-    <label asp-for="Grams" class="control-label">Grams</label>
+    <label asp-for="Grams" class="control-label">Grams (between 0 and 999)</label>
     <input type="number" name="Grams" class="form-control" value="" />
 
 

@@ -16,20 +16,35 @@ namespace CoffeeSchedulingApp.Controllers
 
         public IActionResult Login(User user)
         {
-            return View(user);
+            try
+            {
+                return View(user);
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         public IActionResult GetUserBags(User user)
         {
-            var id = user.UserID;
-            TempData["id"] = id;
-            // Storing data in the session
-            HttpContext.Session.SetInt32("UserID", id);
+            try
+            {
+                var id = user.UserID;
+                TempData["id"] = id;
 
-            // Retrieving data from the session
-            var userID = HttpContext.Session.GetInt32("UserID");
+                // Storing data in the session
+                HttpContext.Session.SetInt32("UserID", id);
 
-            return RedirectToAction("Index", "Inventory");  
+                // Retrieving data from the session
+                var userID = HttpContext.Session.GetInt32("UserID");
+
+                return RedirectToAction("Index", "Inventory");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
     }
 }

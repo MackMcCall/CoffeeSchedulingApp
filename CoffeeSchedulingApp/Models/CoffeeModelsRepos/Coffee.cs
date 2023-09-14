@@ -12,6 +12,6 @@
         public DateTime RoastDate { get; set; }
         public int DaysRestNeeded { get; set; }
         public bool ReadyToDrink { get; set; }
-        public double Grams { get; set; }
+        public decimal Grams { get; set; }
     }
 }

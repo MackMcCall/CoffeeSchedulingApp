@@ -6,10 +6,8 @@
 
 @using (Html.BeginForm("GetUserBags", "User", "Post"))
 {
-    @*  <input asp-for="UserID" type="hidden" value="@Model.UserID" /> *@
-
     <label asp-for="UserID" class="control-label">Enter your User ID</label>
     <input type="number" name="UserID" class="form-control" value="0" />
 
-    <input type="submit" value="Log In" />
+    <input type="submit" class="btn btn-primary" value="Log In" />
 }

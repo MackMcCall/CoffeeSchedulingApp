@@ -34,16 +34,7 @@
 </table>
 
 <div style="display: block">
-    <a href="/Coffee/UpdateCoffee/@Model.CoffeeID">Update this Coffee</a>
-</div>
-
-<div style="display: block">
-
-    @using (Html.BeginForm("UpdateCoffee", "Coffee", "Post"))
-    {
-        <input type="hidden" asp-for="CoffeeID" value="@Model.CoffeeID" />
-        <input type="submit" value="Update this Coffee" />
-    }
+    <a href="/Coffee/UpdateCoffee/@Model.CoffeeID" class="btn btn-primary">Update this Coffee</a>
 </div>
 
 <div style="display: block">
@@ -51,6 +42,6 @@
     @using (Html.BeginForm("DeleteCoffee", "Coffee", "Post"))
     {
         <input type="hidden" asp-for="CoffeeID" value="@Model.CoffeeID" />
-        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Coffee" />
+        <input type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')" value="Delete this Coffee" />
     }
 </div>
