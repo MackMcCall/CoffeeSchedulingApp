@@ -20,6 +20,14 @@ builder.Services.AddTransient<ICoffeeRepo, CoffeeRepo>();
 builder.Services.AddTransient<IUserRepo, UserRepo>();
 builder.Services.AddTransient<IInventoryRepo, InventoryRepo>();
 
+builder.Services.AddDistributedMemoryCache(); // This is for in-memory storage, you can use other providers as well.
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(5); // Set the session timeout
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,6 +40,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseSession(); //uses/calls the session that we setup above
 
 app.UseRouting();
 

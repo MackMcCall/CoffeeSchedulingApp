@@ -27,7 +27,7 @@ namespace CoffeeSchedulingApp.Controllers
             HttpContext.Session.SetInt32("UserID", id);
 
             // Retrieving data from the session
-            string userName = HttpContext.Session.GetString("UserName");
+            var userID = HttpContext.Session.GetInt32("UserID");
 
             return RedirectToAction("Index", "Inventory");  
         }
