@@ -25,7 +25,7 @@
         <td>@Model.Region</td>
         <td>@Model.Variety</td>
         <td>@Model.Process</td>
-        <td>@Model.RoastDate.Date.Month/@Model.RoastDate.Date.Day</td>
+        <td>@Model.RoastDate.ToString("MM/d")</td>
         <td>@Model.DaysRestNeeded</td>
         <td>@(@Model.ReadyToDrink ? "Yes" : "No")</td>
         <td>@Model.Grams</td>

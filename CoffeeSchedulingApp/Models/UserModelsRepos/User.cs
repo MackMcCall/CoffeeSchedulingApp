@@ -4,5 +4,6 @@
     {
         public int UserID { get; set; } 
         public string Name { get; set; }
+        public int AvgGramsPerDay { get; set; }
     }
 }

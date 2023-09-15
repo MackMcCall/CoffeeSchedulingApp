@@ -31,7 +31,7 @@
             <td>@coffee.Region</td>
             <td>@coffee.Variety</td>
             <td>@coffee.Process</td>
-            <td>@coffee.RoastDate.Date.Month/@coffee.RoastDate.Date.Day</td>
+            <td>@coffee.RoastDate.ToString("MM/d")</td>
             <td>@coffee.DaysRestNeeded</td>
             <td>@(@coffee.ReadyToDrink == true ? "Yes" : "No")</td>
             <td>@coffee.Grams</td>

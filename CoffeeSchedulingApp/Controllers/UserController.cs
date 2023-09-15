@@ -31,7 +31,6 @@ namespace CoffeeSchedulingApp.Controllers
             try
             {
                 var id = user.UserID;
-                TempData["id"] = id;
 
                 // Storing data in the session
                 HttpContext.Session.SetInt32("UserID", id);
