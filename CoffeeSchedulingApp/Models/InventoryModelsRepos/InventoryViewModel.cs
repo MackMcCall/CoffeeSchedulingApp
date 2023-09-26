@@ -7,7 +7,5 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
     {
         public User ModelUser { get; set; }
         public IEnumerable<Coffee> ModelCoffees { get; set; }
-        public int UserAvgGrams { get; set; }
-        public int CoffeeTotalGrams { get; set; }
     }
 }

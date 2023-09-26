@@ -3,6 +3,7 @@
 @using CoffeeSchedulingApp.Models.UserModelsRepos;
 @model InventoryViewModel;
 
+
 <h2>Your Coffees</h2>
 <table class="table">
     <tr>
@@ -19,7 +20,9 @@
         <th>Grams</th>
     </tr>
 
-    @{decimal totalGrams;}
+    @{
+        decimal totalGrams = 0;
+    }
 
     @foreach (var coffee in @Model.ModelCoffees)
     {
@@ -37,14 +40,24 @@
             <td>@coffee.Grams</td>
         </tr>
 
+        totalGrams += coffee.Grams;
     }
 </table>
 
-@* @{int daysWorthOfCoffee = "Total grams coffee / Users AvgGramsPerDay"} *@
-@{
-    int daysWorthOfCoffee;
-}
 
 <div style="display: block">
     <a href="/Coffee/InsertCoffee/" class="btn btn-primary">Enter a New Coffee</a>
 </div>
+
+
+@{
+    decimal daysWorthOfCoffee = totalGrams / Model.ModelUser.AvgGramsPerDay;
+}
+<h4>
+    Average Coffee Used per Day: @(Model.ModelUser.AvgGramsPerDay)g
+    @* <a href="/User/UpdateAvgUsage/" class="btn btn-primary">Update Usage Rate</a> *@
+</h4>
+
+<h4>
+    Days of Coffee Left: @Math.Round(daysWorthOfCoffee) days
+</h4>
