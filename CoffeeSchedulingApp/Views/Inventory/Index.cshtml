@@ -53,6 +53,11 @@
 @{
     decimal daysWorthOfCoffee = totalGrams / Model.ModelUser.AvgGramsPerDay;
 }
+
+<h4>
+    Total Coffee Left: @Math.Round(totalGrams)g
+</h4>
+
 <h4>
     Average Coffee Used per Day: @(Model.ModelUser.AvgGramsPerDay)g
     @* <a href="/User/UpdateAvgUsage/" class="btn btn-primary">Update Usage Rate</a> *@
