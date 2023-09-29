@@ -6,5 +6,6 @@
         public User GetUser(int userID);
         public void UpdateUser(User user);
         public void DeleteUser(User user);
+        public void UpdateUserAvgGramsPerDay(User user);
     }
 }

@@ -1,0 +1,20 @@
+﻿@* @model User; *@
+@* @{
+    @using (Html.BeginForm("UpdateUserAvgGramsPerDayToDatabase", "User", "Post"))
+    {
+        <input asp-for="UserID" type="hidden" value="@Model.CoffeeID" />
+
+        <label asp-for="AvgGramsPerDay" class="control-label">Days Rest Needed</label>
+        <input type="number" name="DaysRestNeeded" class="form-control" value="@Model.DaysRestNeeded" />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReadyToDrink, "Ready To Drink")
+            @Html.CheckBoxFor(model => model.ReadyToDrink, new { @class = "form-check-input" })
+        </div>
+
+        <label asp-for="Grams" class="control-label">Grams (0-999)</label>
+        <input type="number" name="Grams" class="form-control" value="@Model.Grams" />
+
+        <input type="submit" value="Update Coffee" class="btn btn-primary" />
+    }
+} *@

@@ -16,7 +16,7 @@ namespace CoffeeSchedulingApp.Models.UserModelsRepos
 
         public User GetUser(int id)
         {
-            return _conn.QuerySingle<User>("SELECT * FROM users WHERE UserID = @id", new { id });
+            return _conn.QuerySingle<User>("SELECT * FROM users WHERE UserID = @id;", new { id });
         }
 
         public void InsertUser(User userToInsert)
@@ -27,13 +27,19 @@ namespace CoffeeSchedulingApp.Models.UserModelsRepos
 
         public void UpdateUser(User user)
         {
-            _conn.Execute("UPDATE users SET Name = @name WHERE UserID = @userID",
+            _conn.Execute("UPDATE users SET Name = @name WHERE UserID = @userID;",
                 new { name = user.Name, userID = user.UserID });
         }
 
         public void DeleteUser(User user)
         {
-            _conn.Execute("DELETE FROM users WHERE UserID = @userID", new { userID = user.UserID });
+            _conn.Execute("DELETE FROM users WHERE UserID = @userID;", new { userID = user.UserID });
+        }
+
+        public void UpdateUserAvgGramsPerDay(User user)
+        {
+            _conn.Execute("UPDATE users SET AvgGramsPerDay = @avgGramsPerDay WHERE UserID = @userID;",
+                new { userID = user.UserID, avgGramsPerDay = user.AvgGramsPerDay });
         }
     }
 }

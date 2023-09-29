@@ -1,4 +1,5 @@
-﻿using CoffeeSchedulingApp.Models.InventoryModelsRepos;
+﻿using CoffeeSchedulingApp.Models.CoffeeModelsRepos;
+using CoffeeSchedulingApp.Models.InventoryModelsRepos;
 using CoffeeSchedulingApp.Models.UserModelsRepos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -44,6 +45,23 @@ namespace CoffeeSchedulingApp.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+        }
+
+        public IActionResult UpdateUserAvgGrams(int id)
+        {
+            User user = _repo.GetUser(id);
+            if (user == null)
+            {
+                return View("User Not Found");
+            }
+            return View(user);
+        }
+
+        public IActionResult UpdateCoffeeToDatabase(User user)
+        {
+            _repo.UpdateUserAvgGramsPerDay(user);
+
+            return RedirectToAction("ViewInventoryIndex", new { id = user.UserID});
         }
     }
 }
