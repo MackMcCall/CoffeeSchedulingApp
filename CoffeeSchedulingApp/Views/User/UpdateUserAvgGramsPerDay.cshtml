@@ -1,0 +1,13 @@
+﻿@using CoffeeSchedulingApp.Models.UserModelsRepos;
+@model User;
+@{
+    @using (Html.BeginForm("UpdateUserAvgGramsPerDayToDatabase", "User", "Post"))
+    {
+        <input asp-for="UserID" type="hidden" value="@Model.UserID" />
+
+        <label asp-for="AvgGramsPerDay" class="control-label">Average Grams Per Day</label>
+        <input type="number" name="AvgGramsPerDay" class="form-control" value="@Model.AvgGramsPerDay" />
+
+        <input type="submit" value="Update Grams Per Day" class="btn btn-primary" />
+    }
+}
