@@ -47,7 +47,7 @@ namespace CoffeeSchedulingApp.Controllers
             }
         }
 
-        public IActionResult UpdateUserAvgGrams(int id)
+        public IActionResult UpdateUserAvgGramsPerDay(int id)
         {
             User user = _repo.GetUser(id);
             if (user == null)
@@ -57,11 +57,11 @@ namespace CoffeeSchedulingApp.Controllers
             return View(user);
         }
 
-        public IActionResult UpdateCoffeeToDatabase(User user)
+        public IActionResult UpdateUserAvgGramsPerDayToDatabse(User user)
         {
             _repo.UpdateUserAvgGramsPerDay(user);
 
-            return RedirectToAction("ViewInventoryIndex", new { id = user.UserID});
+            return RedirectToAction("Index", "Inventory", new { id = user.UserID});
         }
     }
 }

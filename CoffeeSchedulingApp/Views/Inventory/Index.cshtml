@@ -22,6 +22,8 @@
 
     @{
         decimal totalGrams = 0;
+        int totalDaysRest = 0;
+        int numberOfCoffees = 0;
     }
 
     @foreach (var coffee in @Model.ModelCoffees)
@@ -41,6 +43,8 @@
         </tr>
 
         totalGrams += coffee.Grams;
+        totalDaysRest += coffee.DaysRestNeeded;
+        numberOfCoffees++;
     }
 </table>
 
@@ -60,9 +64,25 @@
 
 <h4>
     Average Coffee Used per Day: @(Model.ModelUser.AvgGramsPerDay)g
-    <a href="/User/UpdateUserAvgGramsPerDay/" class="btn btn-primary">Update Usage Rate</a>
+    <a href="/User/UpdateUserAvgGramsPerDay/@Model.ModelUser.UserID" class="btn btn-primary">Update Usage Rate</a>
 </h4>
 
 <h4>
     Days of Coffee Left: @Math.Round(daysWorthOfCoffee) days
+</h4>
+
+@{
+    var runOutOfCoffeeDay = DateTime.Today.AddDays(Convert.ToInt32(daysWorthOfCoffee));
+}
+
+<h4>
+    You Will Run Out of Coffee On: @runOutOfCoffeeDay.ToString("MM/d")
+</h4>
+
+@{
+    var buyCoffeeDay = runOutOfCoffeeDay.AddDays(-(totalDaysRest/numberOfCoffees));
+}
+
+<h4>
+    To Have Rested Coffee, Buy More On: @buyCoffeeDay.ToString("MM/d")
 </h4>
