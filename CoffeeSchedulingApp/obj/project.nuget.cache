@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ljFKVC8ufGoYYv+zGUIscgaizuZuWGEeSFEoJ1KnYW+fzySL7mo49bq4oMTtHsPwpw7b6G/Yb/un5jSGqXAIRw==",
+  "dgSpecHash": "WoLfeCFtetdXXug7iANHd0lcflggMaP31qNWWP366cnyosa+SRVeFGfNQWqakMXDMgMtOSWJqSTRO/MnKxViYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mackm\\OneDrive\\Desktop\\repos\\CoffeeSchedulingApp\\CoffeeSchedulingApp\\CoffeeSchedulingApp.csproj",
+  "projectFilePath": "C:\\Users\\mackm\\repos\\CoffeeSchedulingApp\\CoffeeSchedulingApp\\CoffeeSchedulingApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mackm\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
     "C:\\Users\\mackm\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
