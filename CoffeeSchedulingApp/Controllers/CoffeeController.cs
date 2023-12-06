@@ -23,10 +23,6 @@ namespace CoffeeSchedulingApp.Controllers
         public IActionResult UpdateCoffee(int id)
         {
             Coffee coffee = _repo.GetCoffee(id);
-            if (coffee == null)
-            {
-                return View("Coffee Not Found");
-            }
             return View(coffee);
         }
 
