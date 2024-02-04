@@ -50,10 +50,6 @@ namespace CoffeeSchedulingApp.Controllers
         public IActionResult UpdateUserAvgGramsPerDay(int id)
         {
             User user = _repo.GetUser(id);
-            if (user == null)
-            {
-                return View("User Not Found");
-            }
             return View(user);
         }
 

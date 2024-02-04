@@ -15,6 +15,7 @@
         <th>Days Rest Needed</th>
         <th>Ready To Drink</th>
         <th>Grams</th>
+        <th>Archived</th>
     </tr>
 
     <tr>
@@ -29,6 +30,7 @@
         <td>@Model.DaysRestNeeded</td>
         <td>@(@Model.ReadyToDrink ? "Yes" : "No")</td>
         <td>@Model.Grams</td>
+        <td>@(@Model.IsArchived ? "Yes" : "No")</td>
     </tr>
     
 </table>

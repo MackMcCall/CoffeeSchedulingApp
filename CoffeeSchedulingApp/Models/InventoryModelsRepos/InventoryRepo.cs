@@ -15,7 +15,7 @@ namespace CoffeeSchedulingApp.Models.InventoryModelsRepos
 
         public IEnumerable<Coffee> GetAllUserBags(int userID)
         {
-            return _conn.Query<Coffee>("SELECT c.CoffeeID, Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams " +
+            return _conn.Query<Coffee>("SELECT c.CoffeeID, Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams, IsArchived " +
                 "FROM coffees AS c " +
                 "INNER JOIN inventories AS i " +
                 "ON c.CoffeeID = i.CoffeeID " +

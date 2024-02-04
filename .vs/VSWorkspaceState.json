@@ -4,7 +4,10 @@
     "\\CoffeeSchedulingApp",
     "\\CoffeeSchedulingApp\\Controllers",
     "\\CoffeeSchedulingApp\\Models",
-    "\\CoffeeSchedulingApp\\Views"
+    "\\CoffeeSchedulingApp\\Models\\CoffeeModelsRepos",
+    "\\CoffeeSchedulingApp\\Views",
+    "\\CoffeeSchedulingApp\\Views\\Inventory"
   ],
+  "SelectedNode": "\\CoffeeSchedulingApp\\Models\\CoffeeModelsRepos\\Coffee.cs",
   "PreviewInSolutionExplorer": false
 }

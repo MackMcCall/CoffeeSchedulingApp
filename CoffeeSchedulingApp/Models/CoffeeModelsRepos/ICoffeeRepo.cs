@@ -7,6 +7,7 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
         public void InsertCoffee(Coffee coffeeToInsert, int userID);
         public Coffee GetCoffee(int coffeeID);
         public void UpdateCoffee(Coffee coffee);
+        public void ArchiveCoffee(Coffee coffee);
         public void DeleteCoffee(Coffee coffee);
     }
 }

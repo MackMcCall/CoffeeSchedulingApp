@@ -14,7 +14,6 @@ C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\bi
 C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\bin\Debug\net7.0\MySql.Data.dll
 C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\bin\Debug\net7.0\Newtonsoft.Json.dll
-C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\bin\Debug\net7.0\BouncyCastle.Crypto.dll
 C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\bin\Debug\net7.0\System.Drawing.Common.dll
 C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
@@ -55,3 +54,5 @@ C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\ob
 C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\obj\Debug\net7.0\CoffeeSchedulingApp.pdb
 C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\obj\Debug\net7.0\CoffeeSchedulingApp.genruntimeconfig.cache
 C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\obj\Debug\net7.0\ref\CoffeeSchedulingApp.dll
+C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\obj\Debug\net7.0\CoffeeSchedulingApp.sourcelink.json
+C:\Users\mackm\OneDrive\Desktop\repos\CoffeeSchedulingApp\CoffeeSchedulingApp\bin\Debug\net7.0\BouncyCastle.Cryptography.dll

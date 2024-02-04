@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CoffeeSchedulingApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a78a741caadaf1acceca1ec58d568c50d70569a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("CoffeeSchedulingApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoffeeSchedulingApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

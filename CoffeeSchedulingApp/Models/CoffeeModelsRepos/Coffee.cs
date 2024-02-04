@@ -13,5 +13,6 @@
         public int DaysRestNeeded { get; set; }
         public bool ReadyToDrink { get; set; }
         public decimal Grams { get; set; }
+        public bool IsArchived { get; set; }
     }
 }

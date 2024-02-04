@@ -18,11 +18,14 @@
         <th>Days Rest Needed</th>
         <th>Ready To Drink</th>
         <th>Grams</th>
+        <th>Archived</th>
     </tr>
 
     @{
+        bool anyCoffeesNotArchived = false;
         decimal totalGrams = 0;
         int totalDaysRest = 0;
+        decimal daysWorthOfCoffee = 0;
         int numberOfCoffees = 0;
     }
 
@@ -40,11 +43,17 @@
             <td>@coffee.DaysRestNeeded</td>
             <td>@(@coffee.ReadyToDrink == true ? "Yes" : "No")</td>
             <td>@coffee.Grams</td>
+            <td>@(@coffee.IsArchived == true ? "Yes" : "No")</td>
         </tr>
 
-        totalGrams += coffee.Grams;
-        totalDaysRest += coffee.DaysRestNeeded;
-        numberOfCoffees++;
+        @if (coffee.IsArchived == false)
+        {
+            totalGrams += coffee.Grams;
+            totalDaysRest += coffee.DaysRestNeeded;
+            numberOfCoffees++;
+            anyCoffeesNotArchived = true;
+        }
+
     }
 </table>
 
@@ -53,9 +62,20 @@
     <a href="/Coffee/InsertCoffee/" class="btn btn-primary">Enter a New Coffee</a>
 </div>
 
+@{
+    DateTime runOutOfCoffeeDay;
+    DateTime buyCoffeeDay = System.DateTime.Now;
+}
 
 @{
-    decimal daysWorthOfCoffee = totalGrams / Model.ModelUser.AvgGramsPerDay;
+    if (anyCoffeesNotArchived)
+    {
+        daysWorthOfCoffee = totalGrams / Model.ModelUser.AvgGramsPerDay;
+    }
+    else
+    {
+        daysWorthOfCoffee = 0;
+    }
 }
 
 <h4>
@@ -72,7 +92,7 @@
 </h4>
 
 @{
-    var runOutOfCoffeeDay = DateTime.Today.AddDays(Convert.ToInt32(daysWorthOfCoffee));
+    runOutOfCoffeeDay = DateTime.Today.AddDays(Convert.ToInt32(daysWorthOfCoffee));
 }
 
 <h4>
@@ -80,7 +100,10 @@
 </h4>
 
 @{
-    var buyCoffeeDay = runOutOfCoffeeDay.AddDays(-(totalDaysRest/numberOfCoffees));
+    if (anyCoffeesNotArchived)
+    {
+        buyCoffeeDay = runOutOfCoffeeDay.AddDays(-(totalDaysRest / numberOfCoffees));
+    }
 }
 
 <h4>

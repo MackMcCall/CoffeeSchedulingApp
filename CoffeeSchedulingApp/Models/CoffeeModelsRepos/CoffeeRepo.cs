@@ -23,7 +23,7 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
         {
             _conn.Execute("INSERT INTO coffees " +
                 "(Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams)" +
-                "VALUES (@roaster, @producer, @country, @region, @variety, @process, @roastDate, @daysRestNeeded, @readyToDrink, @grams);",
+                "VALUES (@roaster, @producer, @country, @region, @variety, @process, @roastDate, @daysRestNeeded, @readyToDrink, @grams, @isArchived);",
             new
             {
                 roaster = coffeeToInsert.Roaster,
@@ -35,7 +35,8 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
                 roastDate = coffeeToInsert.RoastDate,
                 daysRestNeeded = coffeeToInsert.DaysRestNeeded,
                 readyToDrink = coffeeToInsert.ReadyToDrink,
-                grams = coffeeToInsert.Grams
+                grams = coffeeToInsert.Grams,
+                isArchived = coffeeToInsert.IsArchived
             });
             
             @coffeeToInsert.CoffeeID = Convert.ToInt32(_conn.ExecuteScalar("SELECT LAST_INSERT_ID();", coffeeToInsert));
@@ -60,7 +61,8 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
                 "RoastDate = @roastDate, " +
                 "DaysRestNeeded = @daysRestNeeded, " +
                 "ReadyToDrink = @readyToDrink, " +
-                "Grams = @grams " +
+                "Grams = @grams, " +
+                "IsArchived = @isArchived " +
                 "WHERE CoffeeID = @id",
                 new
                 {
@@ -74,8 +76,22 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
                     daysRestNeeded = coffee.DaysRestNeeded,
                     readyToDrink = coffee.ReadyToDrink,
                     grams = coffee.Grams,
+                    isArchived = coffee.IsArchived,
                     id = coffee.CoffeeID
-                });;
+                });
+        }
+
+        
+        public void ArchiveCoffee(Coffee coffee)
+        {
+            _conn.Execute("UPDATE coffees SET " +
+                "IsArchived = @isArchived" +
+                "WHERE CoffeeID = @id",
+                new
+                {
+                    isArchived = coffee.IsArchived,
+                    id = coffee.CoffeeID
+                });
         }
 
         public void DeleteCoffee(Coffee coffee)
