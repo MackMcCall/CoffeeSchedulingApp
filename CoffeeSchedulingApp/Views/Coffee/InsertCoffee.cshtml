@@ -40,6 +40,11 @@
     <label asp-for="Grams" class="control-label">Grams (between 0 and 999)</label>
     <input type="number" name="Grams" class="form-control" value="" />
 
+    <div class="form-group">
+        @Html.LabelFor(model => model.IsArchived, "Archive")
+        @Html.CheckBoxFor(model => model.IsArchived, new { @class = "form-check-input" })
+    </div>
+
 
     <input type="submit" value="Enter Coffee" class="btn btn-primary" />
 }

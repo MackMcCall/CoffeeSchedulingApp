@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "enpqkfeWh820pNM7j+Txx5c1UgJJfCNoHW4taXbV+wlP/Z+8aWOF6RlxVXUha3ymklZ1qlSXWsietY0NqvoXhQ==",
+  "dgSpecHash": "4h6oxsZnDDrM87TZKsAApLQ9bUlCSn9+8rvaWwYBHYt6msOTsj6sXJvwS5ir1Z67WUlOCY2Yd7NlGd6F1Bq9wQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mackm\\OneDrive\\Desktop\\repos\\CoffeeSchedulingApp\\CoffeeSchedulingApp\\CoffeeSchedulingApp.csproj",
+  "projectFilePath": "C:\\Users\\mackm\\repos\\CoffeeSchedulingApp\\CoffeeSchedulingApp\\CoffeeSchedulingApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mackm\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\mackm\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",

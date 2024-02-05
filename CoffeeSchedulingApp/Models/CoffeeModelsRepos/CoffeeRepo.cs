@@ -22,7 +22,7 @@ namespace CoffeeSchedulingApp.Models.CoffeeModelsRepos
         public void InsertCoffee(Coffee coffeeToInsert, int userID)
         {
             _conn.Execute("INSERT INTO coffees " +
-                "(Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams)" +
+                "(Roaster, Producer, Country, Region, Variety, Process, RoastDate, DaysRestNeeded, ReadyToDrink, Grams, IsArchived)" +
                 "VALUES (@roaster, @producer, @country, @region, @variety, @process, @roastDate, @daysRestNeeded, @readyToDrink, @grams, @isArchived);",
             new
             {
