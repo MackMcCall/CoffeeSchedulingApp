@@ -1,4 +1,4 @@
-# Coffee Scheduler ☕: A Personal Coffee Inventory Management App (Built with ASP.NET MVC)
+# Coffee Scheduler ☕: A Personal Coffee Inventory Management App
 
 Looking to never run out of coffee again? This personal project demonstrates my skill in fullstack development and my ability to build practical applications using ASP.NET MVC. Coffee Scheduler allows users to:
 
@@ -6,11 +6,11 @@ Looking to never run out of coffee again? This personal project demonstrates my 
 - Smart consumption calculations: Input your average daily usage, and the app calculates how long your current supply will last.
 - Restock reminders: Receive timely notifications when it's time to repurchase coffee, ensuring you never get caught off guard (future development).
 
-This project highlights my skills in:
+## This project demonstrates proficiency in:
 
 - Backend Development: Experience with C#, ASP.NET MVC, and database interaction (MySQL with Dapper).
 - Frontend Development: HTML for user interface design.
-- Authentication: Implementation in progress using Auth0 for secure user login (future development).
+- Authentication: Implementation in progress using Auth0 for secure user login.
 
 ## Looking to Contribute? (Great for Junior Devs!)
 
