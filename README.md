@@ -27,5 +27,5 @@ If you're passionate about software development and share my love for a good cup
 ## Stay Connected:
 
 - Email: [mackmc9924@gmail.com](mailto:mackmc9924@gmail.com)
-- GitHub: [MackMcCall](https://github.com/MackMcCall)
-- Project Repository: [CoffeeScheduler Repo](https://github.com/MackMcCall/CoffeeSchedulingApp)
+- GitHub: [Mack McCall](https://github.com/MackMcCall)
+- LinkedIn: [Mack McCall](https://www.linkedin.com/in/mackmccall/)
