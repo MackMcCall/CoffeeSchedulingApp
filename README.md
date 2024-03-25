@@ -16,15 +16,13 @@ This project highlights my skills in:
 
 If you're passionate about software development and share my love for a good cup of coffee, I'd love to hear from you! Let's connect on [LinkedIn](https://www.linkedin.com/in/mackmccall/) or reach out by email: [mackmc9924@gmail.com](mailto:mackmc9924@gmail.com).
 
-## Credits:
+## Technologies:
 
-- Developed by: Mack McCall
-- Technologies used:
- - C#
- - ASP.NET MVC
- - MySQL
- - Dapper
- - HTML
+- C#
+- ASP.NET MVC
+- MySQL
+- Dapper
+- HTML
 
 ## Stay Connected:
 
