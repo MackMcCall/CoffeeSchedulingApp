@@ -1,6 +1,6 @@
 # Coffee Scheduler ☕: A Personal Coffee Inventory Management App (Built with ASP.NET MVC)
 
-Looking to never run out of coffee again? This personal project demonstrates my passion for web development and my ability to build practical applications using ASP.NET MVC. Coffee Scheduler allows users to:
+Looking to never run out of coffee again? This personal project demonstrates my skill in fullstack development and my ability to build practical applications using ASP.NET MVC. Coffee Scheduler allows users to:
 
 - Easily track coffee inventory: Keep tabs on your current stock to avoid those dreaded empty-cup mornings.
 - Smart consumption calculations: Input your average daily usage, and the app calculates how long your current supply will last.
